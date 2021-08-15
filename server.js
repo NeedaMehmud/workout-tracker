@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require("morgan");
 const mongoose = require('mongoose');
 const apiRoutes = require('./routes/api')
+const htmlRoutes = require('./routes/html')
 
 const PORT = process.env.PORT || 5000;
 
@@ -23,6 +24,7 @@ mongoose.connect(
 );
 app.use(logger('dev'));
 app.use(apiRoutes);
+app.use(htmlRoutes)
 
 
 app.listen(PORT, () => {
